@@ -10,7 +10,8 @@
 1. Navigate to the frontend directory:
 
    ```bash
-   cd frontend
+   cd React-Front-End-and-Authentication
+
 
 ## Command to run the frontend
 
