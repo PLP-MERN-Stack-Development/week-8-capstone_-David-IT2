@@ -30,7 +30,7 @@ A simple calculator frontend built with **React.js** that performs basic arithme
 
 ### **1. Clone the Repository**  
 ```bash
-git clone https://github.com/<your-username>/<repository-name>.git
+git clone https://github.com/David-IT2/React-Front-End-and-Authentication.git
 cd <repository-name>/frontend
 ```
 
@@ -40,9 +40,6 @@ npm install
 
 ### **3. Configure EnvironmenT**  
  set the API endpoint in `.env`:  
-```env
-REACT_APP_API_URL=http://your-backend-api-url.com
-```
 
 ### **4. Run the Development Server**  
 ```bash
