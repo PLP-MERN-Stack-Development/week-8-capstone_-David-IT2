@@ -1,70 +1,70 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Calculator API Backend
 
-## Available Scripts
+## Environment
+- PHP 8.1+
+- Laravel 10.x
+- MySQL
 
-In the project directory, you can run:
+## Setup Instructions
 
-### `npm start`
+1. **Clone the repository** and navigate to the backend directory:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   ```bash
+   git clone <repository-url>
+   cd backend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## MySql setup on mysql workbench
+# Step 1: Set Up MySQL Database in MySQL Workbench
+Open MySQL Workbench:
 
-### `npm test`
+Launch MySQL Workbench on your computer.
+Create a New Connection:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Click on the + icon next to "MySQL Connections" to create a new connection.
+Enter a name for your connection (e.g., "LaravelDB").
+Fill in the connection details:
+Hostname: localhost (or the IP address of your MySQL server)
+Port: 3306 (default MySQL port)
+Username: Your MySQL username (e.g., root)
+Password: Click on "Store in Vault..." to enter your password.
+Test the Connection:
 
-### `npm run build`
+Click on the "Test Connection" button to ensure that the connection is successful. If it is, click "OK" to save the connection.
+Create a New Database:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In the left sidebar, right-click on "Schemas" and select "Create Schema".
+Enter a name for your database (e.g., laravel_db) and click "Apply".
+Review the SQL statement and click "Apply" again to create the database.
+Create Tables:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You can create tables directly in MySQL Workbench by right-clicking on your new database schema and selecting "Create Table".
+Define the table structure (e.g., columns, data types) and click "Apply" to create the table.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Step 2: crete the table in the database
+To create the calculations table in MySQL Workbench using a SQL script, you can translate the Laravel migration code into a standard SQL CREATE TABLE statement. Below is the SQL script that corresponds to the Laravel migration you provided:
 
-### `npm run eject`
+CREATE TABLE 'laravel_db'.'calculations' (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    a DECIMAL(10, 2) NOT NULL,
+    b DECIMAL(10, 2) NOT NULL,
+    operation VARCHAR(255) NOT NULL,
+    result DECIMAL(10, 2) NOT NULL,
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Step 3: Configure Laravel to Connect to MySQL
+Open the .env file located in the root of your Laravel project.
+Update the database connection settings to match your MySQL database configuration:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=root        # Replace with your MySQL username
+DB_PASSWORD=your_password  # Replace with your MySQL password
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Step 4: How to run the application
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+cmd command: php artisan serve
