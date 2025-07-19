@@ -1,52 +1,69 @@
-# MERN Stack Capstone Project
+# Calculator API Backend
 
-This assignment focuses on designing, developing, and deploying a comprehensive full-stack MERN application that showcases all the skills you've learned throughout the course.
+## Environment
+- PHP 8.1+
+- Laravel 10.x
+- MySQL
 
-## Assignment Overview
+## Setup Instructions
 
-You will:
-1. Plan and design a full-stack MERN application
-2. Develop a robust backend with MongoDB, Express.js, and Node.js
-3. Create an interactive frontend with React.js
-4. Implement testing across the entire application
-5. Deploy the application to production
+1. **Clone the repository** and navigate to the backend directory:
 
-## Getting Started
+   ```bash
+   git clone <repository-url>
+   cd backend
 
-1. Accept the GitHub Classroom assignment
-2. Clone the repository to your local machine
-3. Follow the instructions in the `Week8-Assignment.md` file
-4. Plan, develop, and deploy your capstone project
+## MySql setup on mysql workbench
+# Step 1: Set Up MySQL Database in MySQL Workbench
+Open MySQL Workbench:
 
-## Files Included
+Launch MySQL Workbench on your computer.
+Create a New Connection:
 
-- `Week8-Assignment.md`: Detailed assignment instructions
+Click on the + icon next to "MySQL Connections" to create a new connection.
+Enter a name for your connection (e.g., "LaravelDB").
+Fill in the connection details:
+Hostname: localhost (or the IP address of your MySQL server)
+Port: 3306 (default MySQL port)
+Username: Your MySQL username (e.g., root)
+Password: Click on "Store in Vault..." to enter your password.
+Test the Connection:
 
-## Requirements
+Click on the "Test Connection" button to ensure that the connection is successful. If it is, click "OK" to save the connection.
+Create a New Database:
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git and GitHub account
-- Accounts on deployment platforms (Render/Vercel/Netlify/etc.)
+In the left sidebar, right-click on "Schemas" and select "Create Schema".
+Enter a name for your database (e.g., laravel_db) and click "Apply".
+Review the SQL statement and click "Apply" again to create the database.
+Create Tables:
 
-## Project Ideas
+You can create tables directly in MySQL Workbench by right-clicking on your new database schema and selecting "Create Table".
+Define the table structure (e.g., columns, data types) and click "Apply" to create the table.
 
-The `Week8-Assignment.md` file includes several project ideas, but you're encouraged to develop your own idea that demonstrates your skills and interests.
+# Step 2: crete the table in the database
+To create the calculations table in MySQL Workbench using a SQL script, you can translate the Laravel migration code into a standard SQL CREATE TABLE statement. Below is the SQL script that corresponds to the Laravel migration you provided:
 
-## Submission
+CREATE TABLE 'laravel_db'.'calculations' (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    a DECIMAL(10, 2) NOT NULL,
+    b DECIMAL(10, 2) NOT NULL,
+    operation VARCHAR(255) NOT NULL,
+    result DECIMAL(10, 2) NOT NULL,
+    created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
 
-Your project will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+# Step 3: Configure Laravel to Connect to MySQL
+Open the .env file located in the root of your Laravel project.
+Update the database connection settings to match your MySQL database configuration:
 
-1. Commit and push your code regularly
-2. Include comprehensive documentation
-3. Deploy your application and add the live URL to your README.md
-4. Create a video demonstration and include the link in your README.md
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=root        # Replace with your MySQL username
+DB_PASSWORD=your_password  # Replace with your MySQL password
 
-## Resources
+# Step 4: How to run the application
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [GitHub Classroom Guide](https://docs.github.com/en/education/manage-coursework-with-github-classroom) 
+cmd command: php artisan serve
