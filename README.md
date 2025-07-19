@@ -1,52 +1,58 @@
-# MERN Stack Capstone Project
+# **Calculator Frontend (React)**  
 
-This assignment focuses on designing, developing, and deploying a comprehensive full-stack MERN application that showcases all the skills you've learned throughout the course.
+A simple calculator frontend built with **React.js** that performs basic arithmetic operations. This project connects to a backend API using Axios for HTTP requests.  
 
-## Assignment Overview
+---
 
-You will:
-1. Plan and design a full-stack MERN application
-2. Develop a robust backend with MongoDB, Express.js, and Node.js
-3. Create an interactive frontend with React.js
-4. Implement testing across the entire application
-5. Deploy the application to production
+## **📋 Table of Contents**  
+1. [Environment](#-environment)  
+2. [Features](#-features)  
+3. [Setup Instructions](#-setup-instructions)  
+4. [Running the Application](#-running-the-application)    
+6. [Dependencies](#-dependencies)  
 
-## Getting Started
+---
 
-1. Accept the GitHub Classroom assignment
-2. Clone the repository to your local machine
-3. Follow the instructions in the `Week8-Assignment.md` file
-4. Plan, develop, and deploy your capstone project
+## **🛠 Environment**  
+- **React.js**  
+- **Axios  for HTTP**
+- **CSS**
 
-## Files Included
+## **✨ Features**  
+✅ Basic arithmetic operations (addition, subtraction, multiplication, division)  
+✅ Clean and responsive UI  
+✅ Error handling for invalid inputs  
+✅ API integration   
 
-- `Week8-Assignment.md`: Detailed assignment instructions
+---
 
-## Requirements
+##  Setup Instructions**  
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git and GitHub account
-- Accounts on deployment platforms (Render/Vercel/Netlify/etc.)
+### **1. Clone the Repository**  
+```bash
+git clone https://github.com/David-IT2/React-Front-End-and-Authentication.git
+cd <repository-name>/frontend
+```
 
-## Project Ideas
+### **2. Install Dependencies**  
+```bash
+npm install
 
-The `Week8-Assignment.md` file includes several project ideas, but you're encouraged to develop your own idea that demonstrates your skills and interests.
+### **3. Configure EnvironmenT**  
+ set the API endpoint in `.env`:  
 
-## Submission
+### **4. Run the Development Server**  
+```bash
+npm start
+# or
+yarn start
+```
+This will launch the app in development mode at:  
+👉 [http://localhost:3000](http://localhost:3000)  
 
-Your project will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+To see the full list:  
+```bash
+npm list
 
-1. Commit and push your code regularly
-2. Include comprehensive documentation
-3. Deploy your application and add the live URL to your README.md
-4. Create a video demonstration and include the link in your README.md
 
-## Resources
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [GitHub Classroom Guide](https://docs.github.com/en/education/manage-coursework-with-github-classroom) 
